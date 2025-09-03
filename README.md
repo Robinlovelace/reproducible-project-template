@@ -4,7 +4,12 @@ Flexible repo template for reproducible slides with Quarto and continuous deploy
 
 See https://robinlovelace.github.io/reproducible-project-template/slides for the content, the most important parts of which are:
 
-- You can use this repo as a template for your own reproducible slides
+- You can use this repo as a template for your own reproducible slides by clicking on 'Use this template' at https://github.com/Robinlovelace/reproducible-project-template or with the following command using the [gh cli tool](https://cli.github.com/):
+
+```sh
+gh repo create repo-name --public --description "slides for xyz conference" --template robinlovelace/reproducible-project-template
+```
+
 - Quarto is a powerful tool for creating reproducible documents
 - Set-up GitHub pages with:
 
