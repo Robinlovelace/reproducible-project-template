@@ -6,4 +6,4 @@ The materials here support a talk at the [Spatial Data Science across Languages 
 
 See the [slides here](slides) and in the dropdown menu above.
 
-See the source code at [github.com/robinlovelace](https://github.com/Robinlovelace/reproducible-slides-repo-template).
+See the source code at [github.com/robinlovelace](https://github.com/Robinlovelace/reproducible-project-template).
