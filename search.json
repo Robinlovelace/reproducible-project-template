@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "paper.html",
+    "href": "paper.html",
+    "title": "",
+    "section": "",
+    "text": "This is a placeholder for a paper."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
+    "section": "",
+    "text": "The materials here support a talk at the Spatial Data Science across Languages (SDSL) conference 2024.\nSee the slides here and in the dropdown menu above.\nSee the source code at github.com/robinlovelace."
+  },
+  {
     "objectID": "slides.html#why-make-a-presentation-with-quarto-and-continuous-deployment",
     "href": "slides.html#why-make-a-presentation-with-quarto-and-continuous-deployment",
     "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
@@ -54,19 +68,5 @@
     "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
     "section": "With “Citation Picker for Zotero” extension",
     "text": "With “Citation Picker for Zotero” extension\n\nIssue with this approach: doesn’t generate the .bib file\n\n\nAlt+Shift+Z"
-  },
-  {
-    "objectID": "paper.html",
-    "href": "paper.html",
-    "title": "",
-    "section": "",
-    "text": "This is a placeholder for a paper."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducible slides with Quarto and continuous deployment via GitHub actions",
-    "section": "",
-    "text": "The materials here support a talk at the Spatial Data Science across Languages (SDSL) conference 2024.\nSee the slides here and in the dropdown menu above.\nSee the source code at github.com/robinlovelace."
   }
 ]

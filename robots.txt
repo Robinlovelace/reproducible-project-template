@@ -1,1 +1,1 @@
-Sitemap: https://Robinlovelace.github.io/reproducible-slides-repo-template/sitemap.xml
+Sitemap: https://Robinlovelace.github.io/reproducible-project-template/sitemap.xml
