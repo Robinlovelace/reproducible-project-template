@@ -1,8 +1,11 @@
 ---
-title: "Quarto revealjs slides"
+title: "Quarto revealjs slides template"
+date: last-modified
 ---
 
-A Quarto website project with revealjs slides, auto-deployed via GitHub Actions.
+A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
 
-- Online version: [yourusername.github.io/repo-name](https://yourusername.github.io/repo-name)
-- Source code: [github.com/yourusername/repo-name](https://github.com/yourusername/repo-name)
+- Online version: [robinlovelace.github.io/reproducible-project-template](https://robinlovelace.github.io/reproducible-project-template)
+- Source code: [github.com/Robinlovelace/reproducible-project-template](https://github.com/Robinlovelace/reproducible-project-template)
+
+{{< include _readme.md >}}
