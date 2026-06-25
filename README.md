@@ -1,4 +1,4 @@
-# Quarto revealjs slides template
+# Reproducible project template with Quarto and GitHub Actions
 
 A template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
 

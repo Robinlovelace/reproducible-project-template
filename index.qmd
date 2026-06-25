@@ -1,5 +1,5 @@
 ---
-title: "Quarto revealjs slides template"
+title: "Reproducible project template with Quarto and GitHub Actions"
 date: last-modified
 ---
 
