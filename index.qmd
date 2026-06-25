@@ -1,5 +1,5 @@
 ---
-title: "Reproducible project template with Quarto and GitHub Actions"
+title: "Reproducible project template"
 date: last-modified
 ---
 

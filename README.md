@@ -1,4 +1,4 @@
-# Reproducible project template with Quarto and GitHub Actions
+# Reproducible project template
 
 A template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
 
