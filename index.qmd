@@ -4,5 +4,5 @@ title: "Quarto revealjs slides"
 
 A Quarto website project with revealjs slides, auto-deployed via GitHub Actions.
 
-- [Online version](https://yourusername.github.io/repo-name/slides.html)
-- [Source code](https://github.com/yourusername/repo-name)
+- Online version: [yourusername.github.io/repo-name](https://yourusername.github.io/repo-name)
+- Source code: [github.com/yourusername/repo-name](https://github.com/yourusername/repo-name)

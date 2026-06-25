@@ -2,17 +2,10 @@
 title: "Quarto revealjs slides"
 subtitle: "Built with GitHub Actions"
 format: clean-revealjs
-author:
-  - name: Your Name
-    orcid: 0000-0001-5679-6536
-    email: your.email@leeds.ac.uk
-    affiliations: University of Leeds
+author: "Your Name<br><br><span style='font-size:0.7em'>Online version: <a href='https://yourusername.github.io/repo-name'>yourusername.github.io/repo-name</a></span><br><span style='font-size:0.7em'>Source code: <a href='https://github.com/yourusername/repo-name'>github.com/yourusername/repo-name</a></span>"
 date: last-modified
 bibliography: references.bib
 ---
-
-- [Online version](https://yourusername.github.io/repo-name/slides.html)
-- [Source code](https://github.com/yourusername/repo-name)
 
 ## Introduction
 
