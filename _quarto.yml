@@ -1,9 +1,9 @@
 project:
   type: website
+  output-dir: docs
   render:
-    - index.qmd 
+    - index.qmd
     - slides.qmd
-    - paper.qmd
 
 website:
   navbar:
@@ -14,5 +14,3 @@ website:
         href: index.qmd
       - text: "Slides"
         href: slides.qmd
-      # - text: "Paper"
-      #   href: paper.qmd 

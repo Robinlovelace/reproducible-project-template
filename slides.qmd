@@ -1,114 +1,82 @@
 ---
-title: Reproducible slides with Quarto and continuous deployment via GitHub actions
-subtitle: Demonstration slides
-format: 
-  revealjs: default
-  # clean-revealjs:
-  #   self-contained: true
-html-math-method:
-  method: mathjax
-  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+title: "Quarto revealjs slides"
+subtitle: "Built with GitHub Actions"
+format: clean-revealjs
 author:
-  - name: Your name
+  - name: Your Name
     orcid: 0000-0001-5679-6536
-    email: e.mail@leeds.ac.uk
-    affiliations: xyz
+    email: your.email@leeds.ac.uk
+    affiliations: University of Leeds
 date: last-modified
 bibliography: references.bib
 ---
 
-# Introduction
+- [Online version](https://yourusername.github.io/repo-name/slides.html)
+- [Source code](https://github.com/yourusername/repo-name)
 
-## Why make a presentation with Quarto and continuous deployment?
+## Introduction
 
-- Allows you to test ideas in a standalone environment
-- Sharing materials with collaborators and the audience
-- Continuous deployment automates the process of updating the slides and ensures reproducibility
+### Why use Quarto with continuous deployment?
 
-## How to get started?
+- Build slides in plain text (Markdown / `.qmd` files)
+- Render to revealjs with a single command
+- GitHub Actions automatically rebuilds and deploys on every push
+- No manual uploads — always up to date
+- Built-in support for citations, tables, code, maths, and diagrams
 
-- Check out the [Quarto documentation](https://quarto.org/)
-  - Especially the [Publishing](https://quarto.org/docs/publishing/) section
-- You can use this repository as a template for your own slides, go to https://github.com/Robinlovelace/reproducible-slides-repo-template and clone it
-- Note: the approach here is to publish the slides as part of a Quarto website project so it can be used for other purposes too, e.g. if you want to write a paper building on the slides
+## How to get started
 
-## Extensions
+- Click **Use this template** on GitHub
+- Enable Pages: Settings → Pages → Source: GitHub Actions
+- Edit `slides.qmd` with your content
+- Push — your slides are live in ~30 seconds
 
-Add extensions with the following code (which adds the [`clean-revealjs`](https://github.com/grantmcdermott/quarto-revealjs-clean) extension, for example, which has a detailed demo hosted at [github.com/grantmcdermott/quarto-revealjs-clean-demo](https://github.com/grantmcdermott/quarto-revealjs-clean-demo/blob/main/template.qmd)):
+This template includes:
 
-```sh
-quarto install extension grantmcdermott/quarto-revealjs-clean
+- **clean-revealjs** theme (bundled in `_extensions/`)
+- **Self-contained HTML** release workflow
+- `references.bib` ready for citations
+
+## Two-column layouts {background-color="#40666e"}
+
+::::: columns
+::: {.column width="50%"}
+
+Text and bullet points on the left:
+
+- First point
+- Second point
+- [Emphasised text]{.alert}
+
+:::
+::: {.column width="50%"}
+
+A figure or code on the right:
+
+```python
+print("Hello Quarto!")
 ```
 
-Then replace:
+:::
+:::::
 
-```
-format: 
-  revealjs: default
-```
+## Tables with citations
 
-with:
+| Feature | Status |
+|---------|--------|
+| Auto-deploy | ✓ |
+| Citations | [@peng2011] |
+| Executable code | Optional |
+| Self-contained export | ✓ |
 
-```
-format: 
-  clean-revealjs:
-    self-contained: true
-```
+## Next steps
 
-In the YAML header of your `.qmd` file.
+- Replace placeholder text with your content
+- Update `references.bib` with your citations
+- Customise `_quarto.yml` for your project
+- Add your name and ORCID to the YAML header
 
-# Publishing slides (and more)
+## References {scrollable="true"}
 
-## Setting-up `gh-pages` branch
-
-You can do this with a single quarto command:
-
-``` sh
-quarto publish gh-pages
-```
-
-Which leads to the following text and eventually auto-opens the deployed webiste!
-
-![](images/paste-4.png)
-
-## The website
-
-The previous command creates a `gh-pages` branch with the slides in the `docs` folder. This is then automatically deployed to GitHub Pages, and the website is opened in your browser when ready:
-
-![](images/paste-5.png)
-
-How awesome is that?
-
-### 🤯🤯🤯
-
-
-## Debugging
-
-Source of `quarto publish gh-pages` hint: [Error message from GitHub Actions](https://github.com/Robinlovelace/reproducible-slides-repo-template/actions/runs/10860601182/job/30141397336#step:4:34) when trying to publish slides to GitHub Pages:
-
-```         
-ERROR: Unable to publish to GitHub Pages (the remote origin does not have a branch named "gh-pages". Use first `quarto publish gh-pages` locally to initialize the remote repository for publishing.)
-```
-
-![](images/paste-3.png)
-
-# Adding citations {background-color="#40666e"}
-
-## With the Quarto extension
-
--   You need to be in Visual Editor mode (Ctrl+Shift+F4)
--   Then it's Ctrl+Shift+F8
-
-![](images/paste-2.png)
-
-Creates citations like this: [@peng2011]
-
-## With "Citation Picker for Zotero" extension
-
--   Issue with this approach: doesn't generate the .bib file
-
-![](images/paste-1.png)
-
-Alt+Shift+Z
-
-# References
+::: {#refs}
+:::

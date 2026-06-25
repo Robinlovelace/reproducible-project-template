@@ -1,24 +1,41 @@
-# reproducible project template
+# Quarto revealjs slides template
 
-Flexible repo template for reproducible slides with Quarto and continuous deployment via GitHub actions
+A template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
 
-See https://robinlovelace.github.io/reproducible-project-template/slides for the content, the most important parts of which are:
+**Live demo:** https://robinlovelace.github.io/reproducible-project-template/slides.html
 
-- You can use this repo as a template for your own reproducible slides by clicking on 'Use this template' at https://github.com/Robinlovelace/reproducible-project-template or with the following command using the [gh cli tool](https://cli.github.com/):
-
-```sh
-gh repo create repo-name --public --description "slides for xyz conference" --template robinlovelace/reproducible-project-template
-```
-
-- Quarto is a powerful tool for creating reproducible documents
-- Set-up GitHub pages with:
+## Quick start
 
 ```sh
-quarto publish gh-pages
+gh repo create my-slides --template robinlovelace/reproducible-project-template
+cd my-slides
+# Edit slides.qmd, then push
+git push
 ```
 
-- Use [GitHub actions](.github/workflows/) to automatically deploy your slides to GitHub pages
+Then enable Pages: **Settings → Pages → Source: GitHub Actions**.
 
-## Reproducible slide projects build with this
+## What's included
 
-- Deploying cross-language in high impact projects, auto-updated and deployed with every commit, with R and Python code running and generating results shown in the slides: https://github.com/Robinlovelace/cross_language_projects
+- **clean-revealjs theme** — bundled in `_extensions/`, no install needed
+- **GitHub Actions** — renders and deploys on every push (deploy-pages@v4)
+- **Self-contained HTML** — automatic release workflow for offline sharing
+- **Citation support** — `references.bib` ready for bibliographies
+
+## Built with this template
+
+- [AUM 2026 slides](https://robinlovelace.net/aum26/) — Modelling multi-model traffic, casualties and risk
+- [ITF Workshop slides](https://robinlovelace.net/itfworkshop/) — Building communities of transport practitioners
+
+## Structure
+
+```
+├── slides.qmd              # Main slide deck
+├── index.qmd               # Landing page
+├── _quarto.yml             # Project config
+├── references.bib          # Bibliography
+├── _extensions/clean/      # clean-revealjs theme
+└── .github/workflows/
+    ├── publish.yml          # Render + deploy to Pages
+    └── release-standalone.yml  # Build self-contained HTML
+```

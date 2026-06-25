@@ -1,0 +1,31 @@
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+name: Release Self-Contained HTML
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Build self-contained HTML
+        run: |
+          cp slides.qmd slides-standalone.qmd
+          # Enable embed-resources in the copy (adjust format name if needed)
+          sed -i 's/format: clean-revealjs/format:\n  clean-revealjs:\n    embed-resources: true\n    self-contained-math: true/' slides-standalone.qmd
+          sed -i 's/format: revealjs/format:\n  revealjs:\n    embed-resources: true\n    self-contained-math: true/' slides-standalone.qmd
+          quarto render slides-standalone.qmd
+          ls -lh slides-standalone.html
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload v1 slides-standalone.html --clobber --repo ${{ github.repository }}
