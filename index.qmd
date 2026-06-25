@@ -8,4 +8,6 @@ A flexible template for reproducible slides with Quarto, GitHub Actions, and Git
 - Online version: [robinlovelace.github.io/reproducible-project-template](https://robinlovelace.github.io/reproducible-project-template)
 - Source code: [github.com/Robinlovelace/reproducible-project-template](https://github.com/Robinlovelace/reproducible-project-template)
 
-{{< include _readme.md >}}
+![Deploy status](https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&label=deploy) Last updated: {{< meta date >}}
+
+{{< include README.md >}}
