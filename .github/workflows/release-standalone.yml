@@ -25,9 +25,19 @@ jobs:
 
       - name: Generate PDF via DeckTape
         run: |
+          # Install Chrome dependencies for headless mode
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            libgbm-dev libdrm2 libxkbcommon0 libatk-bridge2.0-0 \
+            libasound2t64 libxdamage1 libxfixes3 libpango-1.0-0 \
+            libcairo2 libcups2t64 libnss3 libxcomposite1 \
+            libxrandr2 libexpat1 libdbus-1-3 libatspi2.0-0t64 2>/dev/null || true
           npm install -g decktape
           npx decktape reveal \
             --size 1280x720 \
+            --chrome-arg=--no-sandbox \
+            --chrome-arg=--disable-setuid-sandbox \
+            --chrome-arg=--disable-gpu \
             docs/slides.html \
             slides.pdf
           ls -lh slides.pdf
