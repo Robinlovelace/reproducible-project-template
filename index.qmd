@@ -10,4 +10,4 @@ A flexible template for reproducible slides with Quarto, GitHub Actions, and Git
 
 ![Deploy status](https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&label=deploy) Last updated: {{< meta date >}}
 
-{{< include README.md >}}
+{{< include _readme-body.md >}}
