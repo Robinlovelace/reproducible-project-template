@@ -4,8 +4,9 @@ project:
   render:
     - index.qmd
     - slides.qmd
-  execute:
-    freeze: auto
+
+execute:
+  freeze: auto
 
 website:
   navbar:

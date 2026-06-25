@@ -37,7 +37,7 @@ This template includes:
 - **Self-contained HTML** release workflow
 - `references.bib` ready for citations
 
-## Two-column layouts {background-color="#40666e"}
+## Two-column layouts
 
 ::::: columns
 ::: {.column width="50%"}
