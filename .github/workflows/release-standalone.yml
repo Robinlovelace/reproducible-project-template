@@ -3,7 +3,7 @@ on:
     branches: [main]
   workflow_dispatch:
 
-name: Release Self-Contained HTML
+name: Release Slides
 
 jobs:
   release:
@@ -18,14 +18,40 @@ jobs:
       - name: Build self-contained HTML
         run: |
           cp slides.qmd slides-standalone.qmd
-          # Enable embed-resources in the copy (adjust format name if needed)
           sed -i 's/format: clean-revealjs/format:\n  clean-revealjs:\n    embed-resources: true\n    self-contained-math: true/' slides-standalone.qmd
           sed -i 's/format: revealjs/format:\n  revealjs:\n    embed-resources: true\n    self-contained-math: true/' slides-standalone.qmd
           quarto render slides-standalone.qmd
           ls -lh slides-standalone.html
 
-      - name: Upload to release
+      - name: Generate PDF via DeckTape
+        run: |
+          npm install -g decktape
+          npx decktape reveal \
+            --size 1280x720 \
+            docs/slides.html \
+            slides.pdf
+          ls -lh slides.pdf
+
+      - name: Create date-based release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload v1 slides-standalone.html --clobber --repo ${{ github.repository }}
+          TAG="v$(date +%Y.%m.%d)"
+          # Handle multiple releases on same day
+          if gh release view "$TAG" --repo ${{ github.repository }} &>/dev/null; then
+            N=2
+            while gh release view "${TAG}-${N}" --repo ${{ github.repository }} &>/dev/null; do
+              N=$((N + 1))
+            done
+            TAG="${TAG}-${N}"
+          fi
+          echo "Creating release: $TAG"
+          gh release create "$TAG" \
+            slides-standalone.html \
+            slides.pdf \
+            --title "Slides $TAG" \
+            --notes "Self-contained HTML and PDF export of the slides.
+
+            **Files:**
+            - slides-standalone.html — self-contained HTML (all images embedded, works offline)
+            - slides.pdf — PDF export via DeckTape"

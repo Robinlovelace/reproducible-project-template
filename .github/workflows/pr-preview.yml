@@ -1,0 +1,28 @@
+on:
+  pull_request:
+    branches: [main]
+
+name: PR Preview
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render site
+        run: quarto render
+
+      - name: Deploy preview to Pages
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: docs
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
