@@ -25,7 +25,6 @@ jobs:
 
       - name: Generate PDF via DeckTape
         run: |
-          # Install Chrome dependencies for headless mode
           sudo apt-get update -qq
           sudo apt-get install -y -qq \
             libgbm-dev libdrm2 libxkbcommon0 libatk-bridge2.0-0 \
@@ -38,7 +37,7 @@ jobs:
             --chrome-arg=--no-sandbox \
             --chrome-arg=--disable-setuid-sandbox \
             --chrome-arg=--disable-gpu \
-            docs/slides.html \
+            slides-standalone.html \
             slides.pdf
           ls -lh slides.pdf
 
@@ -47,7 +46,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG="v$(date +%Y.%m.%d)"
-          # Handle multiple releases on same day
           if gh release view "$TAG" --repo ${{ github.repository }} &>/dev/null; then
             N=2
             while gh release view "${TAG}-${N}" --repo ${{ github.repository }} &>/dev/null; do
