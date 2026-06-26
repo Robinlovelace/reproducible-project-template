@@ -1,5 +1,7 @@
 ## Quick start
 
+*(Note: The commands below use the [GitHub CLI (`gh`)](https://cli.github.com/). If you don't have it installed, you can [follow the installation instructions](https://cli.github.com/) or create the repository manually on GitHub).*
+
 ```sh
 gh repo create my-slides --template robinlovelace/reproducible-project-template
 cd my-slides
