@@ -80,6 +80,13 @@ jobs:
       - name: Render site
         run: quarto render
 
+      - name: Upload docx artifact
+        if: hashFiles('docs/*.docx') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: docx
+          path: docs/*.docx
+
       - name: Add .nojekyll
         run: touch docs/.nojekyll
 
