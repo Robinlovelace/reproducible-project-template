@@ -10,7 +10,7 @@ format:
 
 A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
 
-- Online version: [robinlovelace.github.io/reproducible-project-template](https://robinlovelace.github.io/reproducible-project-template)
+- Online version: [robinlovelace.net/reproducible-project-template](https://robinlovelace.net/reproducible-project-template/)
 - Source code: [github.com/Robinlovelace/reproducible-project-template](https://github.com/Robinlovelace/reproducible-project-template)
 
 ::: {.content-visible when-format="html"}

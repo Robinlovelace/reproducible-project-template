@@ -9,6 +9,11 @@ execute:
   freeze: auto
 
 website:
+  site-url: https://robinlovelace.net/reproducible-project-template/
+  title: "Reproducible Project Template"
+  repo-url: https://github.com/Robinlovelace/reproducible-project-template
+  repo-branch: main
+  repo-actions: [edit, issue]
   navbar:
     background: primary
     search: true
@@ -17,3 +22,7 @@ website:
         href: index.qmd
       - text: "Slides"
         href: slides.qmd
+    right:
+      - icon: github
+        href: https://github.com/Robinlovelace/reproducible-project-template
+        aria-label: GitHub

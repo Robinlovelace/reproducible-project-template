@@ -2,7 +2,7 @@
 
 A template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
 
-**Live demo:** https://robinlovelace.github.io/reproducible-project-template/slides.html
+**Live demo:** https://robinlovelace.net/reproducible-project-template/ (slides: https://robinlovelace.net/reproducible-project-template/slides.html)
 
 ![Deploy status](https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&label=deploy)
 
