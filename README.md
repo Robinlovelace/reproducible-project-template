@@ -6,6 +6,10 @@ A template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages
 
 ![Deploy status](https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&label=deploy)
 
+## Word version
+
+`index.qmd` is also built as a `.docx`, linked under "Other Formats" on the site, so co-authors can use tracked changes in Word. The author folds accepted changes back into the `.qmd` by hand (`pandoc --track-changes=all -t markdown index.docx` shows them). To turn it off, delete the `docx: default` line in the `format:` block of `index.qmd`.
+
 ## Quick start
 
 *(Note: The commands below use the [GitHub CLI (`gh`)](https://cli.github.com/). If you don't have it installed, you can [follow the installation instructions](https://cli.github.com/) or create the repository manually on GitHub).*

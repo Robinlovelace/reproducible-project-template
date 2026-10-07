@@ -1,6 +1,11 @@
 ---
 title: "Reproducible project template"
 date: last-modified
+bibliography: references.bib
+# Word version for co-authors, linked under "Other Formats". To turn it off, delete the docx line.
+format:
+  html: default
+  docx: default
 ---
 
 A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
@@ -8,6 +13,10 @@ A flexible template for reproducible slides with Quarto, GitHub Actions, and Git
 - Online version: [robinlovelace.github.io/reproducible-project-template](https://robinlovelace.github.io/reproducible-project-template)
 - Source code: [github.com/Robinlovelace/reproducible-project-template](https://github.com/Robinlovelace/reproducible-project-template)
 
-![Deploy status](https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&label=deploy) Last updated: {{< meta date >}}
+::: {.content-visible when-format="html"}
+![Deploy status](https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&label=deploy)
+:::
+
+Last updated: {{< meta date >}}
 
 {{< include _readme-body.md >}}
