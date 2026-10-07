@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-07-30">
+<meta name="dcterms.date" content="2026-10-07">
 
 <title>Reproducible project template</title>
 <style>
@@ -62,7 +62,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -78,10 +97,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-24e0a853b28a089b2425909dcbceaa29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e334931287e9740d0c2b2f1b47af48d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -144,7 +163,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -161,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 30, 2026</p>
+      <p class="date">October 7, 2026</p>
     </div>
   </div>
   
@@ -178,7 +199,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Online version: <a href="https://robinlovelace.github.io/reproducible-project-template">robinlovelace.github.io/reproducible-project-template</a></li>
 <li>Source code: <a href="https://github.com/Robinlovelace/reproducible-project-template">github.com/Robinlovelace/reproducible-project-template</a></li>
 </ul>
-<p><img src="https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&amp;label=deploy" class="img-fluid" alt="Deploy status"> Last updated: July 30, 2026</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img.shields.io/github/actions/workflow/status/Robinlovelace/reproducible-project-template/publish.yml?branch=main&amp;label=deploy" class="img-fluid figure-img"></p>
+<figcaption>Deploy status</figcaption>
+</figure>
+</div>
+<p>Last updated: October 7, 2026</p>
 <section id="quick-start" class="level2">
 <h2 class="anchored" data-anchor-id="quick-start">Quick start</h2>
 <p><em>(Note: The commands below use the <a href="https://cli.github.com/">GitHub CLI (<code>gh</code>)</a>. If you don’t have it installed, you can <a href="https://cli.github.com/">follow the installation instructions</a> or create the repository manually on GitHub).</em></p>
@@ -239,6 +266,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><strong>Citation support</strong></td>
 <td><code>references.bib</code> ready for bibliographies</td>
 </tr>
+<tr class="even">
+<td><strong>Word version</strong></td>
+<td><code>index.qmd</code> also builds a <code>.docx</code> for tracked changes, linked from the site</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -294,11 +325,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://robinlovelace.net/aum26/">AUM 2026 slides</a> — Modelling multi-model traffic, casualties and risk</li>
 <li><a href="https://robinlovelace.net/itfworkshop/">ITF Workshop slides</a> — Building communities of transport practitioners</li>
 </ul>
+</section>
+<section id="word-version-for-co-authors" class="level2">
+<h2 class="anchored" data-anchor-id="word-version-for-co-authors">Word version for co-authors</h2>
+<p>The home page (<code>index.qmd</code>) is also built as <code>index.docx</code>. It is linked under “Other Formats” on the published page and is deployed with the site. Citations from <code>references.bib</code> are rendered as text, for example <span class="citation" data-cites="peng2011">(<a href="#ref-peng2011" role="doc-biblioref">Peng 2011</a>)</span>.</p>
+<p>To turn it off, delete the <code>docx: default</code> line in the <code>format:</code> block of <code>index.qmd</code>. To add it to another page, copy the same <code>format:</code> block into that page.</p>
+<p>Editing with tracked changes:</p>
+<ol type="1">
+<li>Download the docx from the site, or from the <code>docx</code> artifact of the latest Publish run.</li>
+<li>Co-authors turn on Review, Track Changes in Word and edit as normal.</li>
+<li>The author opens the <code>.qmd</code> next to the returned docx and copies each accepted change back by hand. Convert the file to Markdown to see changes quickly with <code>pandoc --track-changes=all -t markdown index.docx</code>.</li>
+<li>Commit the <code>.qmd</code>. The next build replaces the docx.</li>
+</ol>
+<p>The docx is a snapshot. Edits made in Word are not read back automatically, so always edit the <code>.qmd</code> as the source of truth.</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-peng2011" class="csl-entry" role="listitem">
+Peng, Roger D. 2011. <span>“Reproducible Research in Computational Science.”</span> <em>Science (New York, N.y.)</em> 334 (6060): 1226–27. <a href="https://doi.org/10.1126/science.1213847">https://doi.org/10.1126/science.1213847</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -46,7 +46,7 @@
     "href": "index.html",
     "title": "Reproducible project template",
     "section": "",
-    "text": "A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.\nLast updated: July 30, 2026"
+    "text": "A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.\nLast updated: October 7, 2026"
   },
   {
     "objectID": "index.html#quick-start",
@@ -60,7 +60,7 @@
     "href": "index.html#features",
     "title": "Reproducible project template",
     "section": "Features",
-    "text": "Features\n\n\n\n\n\n\n\nFeature\nDescription\n\n\n\n\nclean-revealjs theme\nBundled in _extensions/, zero install needed\n\n\nAuto-deploy\nactions/deploy-pages@v4 on every push to main\n\n\nAuto-detect\nUses quarto inspect to detect R/Python needs; only installs what’s required\n\n\nPR previews\nDeploy preview versions for review before merging\n\n\nQuarto freeze\nCache computation results locally; CI only re-renders markdown\n\n\nSelf-contained HTML\nOffline-capable HTML with all images, CSS, and JS embedded\n\n\nPDF export\nAuto-generated via DeckTape on every release\n\n\nDate-based releases\nAutomatic versioned releases on every push\n\n\nCitation support\nreferences.bib ready for bibliographies"
+    "text": "Features\n\n\n\n\n\n\n\nFeature\nDescription\n\n\n\n\nclean-revealjs theme\nBundled in _extensions/, zero install needed\n\n\nAuto-deploy\nactions/deploy-pages@v4 on every push to main\n\n\nAuto-detect\nUses quarto inspect to detect R/Python needs; only installs what’s required\n\n\nPR previews\nDeploy preview versions for review before merging\n\n\nQuarto freeze\nCache computation results locally; CI only re-renders markdown\n\n\nSelf-contained HTML\nOffline-capable HTML with all images, CSS, and JS embedded\n\n\nPDF export\nAuto-generated via DeckTape on every release\n\n\nDate-based releases\nAutomatic versioned releases on every push\n\n\nCitation support\nreferences.bib ready for bibliographies\n\n\nWord version\nindex.qmd also builds a .docx for tracked changes, linked from the site"
   },
   {
     "objectID": "index.html#workflows",
@@ -82,5 +82,12 @@
     "title": "Reproducible project template",
     "section": "Built with this template",
     "text": "Built with this template\n\nAUM 2026 slides — Modelling multi-model traffic, casualties and risk\nITF Workshop slides — Building communities of transport practitioners"
+  },
+  {
+    "objectID": "index.html#word-version-for-co-authors",
+    "href": "index.html#word-version-for-co-authors",
+    "title": "Reproducible project template",
+    "section": "Word version for co-authors",
+    "text": "Word version for co-authors\nThe home page (index.qmd) is also built as index.docx. It is linked under “Other Formats” on the published page and is deployed with the site. Citations from references.bib are rendered as text, for example (Peng 2011).\nTo turn it off, delete the docx: default line in the format: block of index.qmd. To add it to another page, copy the same format: block into that page.\nEditing with tracked changes:\n\nDownload the docx from the site, or from the docx artifact of the latest Publish run.\nCo-authors turn on Review, Track Changes in Word and edit as normal.\nThe author opens the .qmd next to the returned docx and copies each accepted change back by hand. Convert the file to Markdown to see changes quickly with pandoc --track-changes=all -t markdown index.docx.\nCommit the .qmd. The next build replaces the docx.\n\nThe docx is a snapshot. Edits made in Word are not read back automatically, so always edit the .qmd as the source of truth."
   }
 ]
