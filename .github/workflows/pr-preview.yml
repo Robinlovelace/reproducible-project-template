@@ -24,6 +24,7 @@ jobs:
         run: |
           NEED_R=false
           NEED_PYTHON=false
+          NEED_TEX=false
           FORMATS=""
           ENGINES=""
 
@@ -48,12 +49,20 @@ jobs:
           elif echo "$ENGINES" | grep -qF "markdown"; then
             NEED_PYTHON=false
           fi
+          if echo "$FORMATS" | grep -qF "pdf"; then
+            NEED_TEX=true
+          fi
 
           echo "need_r=$NEED_R" >> "$GITHUB_OUTPUT"
           echo "need_python=$NEED_PYTHON" >> "$GITHUB_OUTPUT"
+          echo "need_tex=$NEED_TEX" >> "$GITHUB_OUTPUT"
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install TinyTeX
+        if: github.event.action != 'closed' && steps.detect.outputs.need_tex == 'true'
+        run: quarto install tinytex --no-prompt --update-path
 
       - name: Install R
         if: github.event.action != 'closed' && steps.detect.outputs.need_r == 'true'
