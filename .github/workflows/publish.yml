@@ -24,6 +24,7 @@ jobs:
         run: |
           NEED_R=false
           NEED_PYTHON=false
+          NEED_TEX=false
           FORMATS=""
           ENGINES=""
 
@@ -48,9 +49,17 @@ jobs:
           elif echo "$ENGINES" | grep -qF "markdown"; then
             NEED_PYTHON=false
           fi
+          if echo "$FORMATS" | grep -qF "pdf"; then
+            NEED_TEX=true
+          fi
 
           echo "need_r=$NEED_R" >> "$GITHUB_OUTPUT"
           echo "need_python=$NEED_PYTHON" >> "$GITHUB_OUTPUT"
+          echo "need_tex=$NEED_TEX" >> "$GITHUB_OUTPUT"
+
+      - name: Install TinyTeX
+        if: steps.detect.outputs.need_tex == 'true'
+        run: quarto install tinytex --no-prompt --update-path
 
       - name: Install R
         if: steps.detect.outputs.need_r == 'true'
@@ -86,6 +95,13 @@ jobs:
         with:
           name: docx
           path: docs/*.docx
+
+      - name: Upload pdf artifact
+        if: hashFiles('docs/*.pdf') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: docs/*.pdf
 
       - name: Add .nojekyll
         run: touch docs/.nojekyll
