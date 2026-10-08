@@ -2,11 +2,18 @@
 title: "Paper title"
 date: last-modified
 bibliography: references.bib
-# Word version for co-authors, linked under "Other Formats". To turn it off, delete the docx line.
 format:
+  html: default
   docx: default
+  pdf: default
 ---
 
-Replace this text with the paper. This file renders to Word (`.docx`) only, so co-authors can edit with tracked changes.
+Replace this text with the paper. The `.qmd` is the source of truth; this file also builds a Word
+document for co-authors to edit with tracked changes:
+
+1. A co-author downloads `paper.docx` (from the [Other Formats](#) menu on the HTML page) and edits it in Word with Track Changes on.
+2. Copy each accepted change back into this file by hand. To see them quickly:
+   `pandoc --track-changes=all -t markdown paper.docx`.
+3. Commit the `.qmd`. The next build replaces the docx.
 
 A citation looks like this [@peng2011].
