@@ -23,6 +23,8 @@ website:
         href: index.qmd
       - text: "Slides"
         href: slides.qmd
+      - text: "Paper"
+        href: paper.qmd
     right:
       - icon: github
         href: https://github.com/Robinlovelace/reproducible-project-template
