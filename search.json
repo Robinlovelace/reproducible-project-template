@@ -46,21 +46,21 @@
     "href": "index.html",
     "title": "Reproducible project template",
     "section": "",
-    "text": "A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.\nLast updated: October 7, 2026"
+    "text": "A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.\nLast updated: October 8, 2026"
   },
   {
     "objectID": "index.html#quick-start",
     "href": "index.html#quick-start",
     "title": "Reproducible project template",
     "section": "Quick start",
-    "text": "Quick start\n(Note: The commands below use the GitHub CLI (gh). If you don’t have it installed, you can follow the installation instructions or create the repository manually on GitHub).\ngh repo create my-slides --template robinlovelace/reproducible-project-template\ncd my-slides\n# Enable Pages: Settings → Pages → Source: Deploy from a branch → Branch: gh-pages, / (root)\n# Edit slides.qmd, then push\ngit push\nYour slides are live in ~30 seconds."
+    "text": "Quick start\nUse the GitHub CLI (gh):\ngh repo create my-slides --template robinlovelace/reproducible-project-template\ncd my-slides\n# Enable Pages: Settings → Pages → Source: Deploy from a branch → Branch: gh-pages, / (root)\n# Edit slides.qmd, then push\ngit push\nYour slides are live in ~30 seconds."
   },
   {
     "objectID": "index.html#features",
     "href": "index.html#features",
     "title": "Reproducible project template",
     "section": "Features",
-    "text": "Features\n\n\n\n\n\n\n\nFeature\nDescription\n\n\n\n\nclean-revealjs theme\nBundled in _extensions/, zero install needed\n\n\nAuto-deploy\nactions/deploy-pages@v4 on every push to main\n\n\nAuto-detect\nUses quarto inspect to detect R/Python needs; only installs what’s required\n\n\nPR previews\nDeploy preview versions for review before merging\n\n\nQuarto freeze\nCache computation results locally; CI only re-renders markdown\n\n\nSelf-contained HTML\nOffline-capable HTML with all images, CSS, and JS embedded\n\n\nPDF export\nAuto-generated via DeckTape on every release\n\n\nDate-based releases\nAutomatic versioned releases on every push\n\n\nCitation support\nreferences.bib ready for bibliographies\n\n\nWord version\nindex.qmd also builds a .docx for tracked changes, linked from the site"
+    "text": "Features\n\n\n\n\n\n\n\nFeature\nDescription\n\n\n\n\nclean-revealjs theme\nBundled in _extensions/, zero install needed\n\n\nAuto-deploy\npeaceiris/actions-gh-pages@v4 on every push to main, publishes to gh-pages\n\n\nAuto-detect\nUses quarto inspect to detect R/Python needs; only installs what’s required\n\n\nPR previews\nDeploy preview versions for review before merging\n\n\nQuarto freeze\nCache computation results locally; CI only re-renders markdown\n\n\nSelf-contained HTML\nOffline-capable HTML with all images, CSS, and JS embedded\n\n\nPDF export\nAuto-generated via DeckTape on every release\n\n\nDate-based releases\nAutomatic versioned releases on every push\n\n\nCitation support\nreferences.bib ready for bibliographies"
   },
   {
     "objectID": "index.html#workflows",
@@ -74,7 +74,7 @@
     "href": "index.html#structure",
     "title": "Reproducible project template",
     "section": "Structure",
-    "text": "Structure\n├── slides.qmd                  # Main slide deck\n├── index.qmd                   # Landing page\n├── _quarto.yml                 # Project config (output-dir, freeze, navbar)\n├── references.bib              # Bibliography\n├── _extensions/clean/          # clean-revealjs theme (bundled)\n└── .github/workflows/\n    ├── publish.yml             # Render + deploy to Pages\n    ├── release-standalone.yml  # Self-contained HTML + PDF release\n    └── pr-preview.yml          # PR preview deployments"
+    "text": "Structure\n├── index.qmd                   # Landing page\n├── slides.qmd                  # Slide deck\n├── paper.qmd                   # Paper (HTML + Word + PDF)\n├── _quarto.yml                 # Project config (output-dir, freeze, navbar)\n├── references.bib              # Bibliography\n├── _extensions/clean/          # clean-revealjs theme (bundled)\n└── .github/workflows/          # publish, release-standalone, pr-preview"
   },
   {
     "objectID": "index.html#built-with-this-template",
@@ -84,10 +84,10 @@
     "text": "Built with this template\n\nAUM 2026 slides — Modelling multi-model traffic, casualties and risk\nITF Workshop slides — Building communities of transport practitioners"
   },
   {
-    "objectID": "index.html#word-version-for-co-authors",
-    "href": "index.html#word-version-for-co-authors",
-    "title": "Reproducible project template",
-    "section": "Word version for co-authors",
-    "text": "Word version for co-authors\nThe home page (index.qmd) is also built as index.docx. It is linked under “Other Formats” on the published page and is deployed with the site. Citations from references.bib are rendered as text, for example (Peng 2011).\nTo turn it off, delete the docx: default line in the format: block of index.qmd. To add it to another page, copy the same format: block into that page.\nEditing with tracked changes:\n\nDownload the docx from the site, or from the docx artifact of the latest Publish run.\nCo-authors turn on Review, Track Changes in Word and edit as normal.\nThe author opens the .qmd next to the returned docx and copies each accepted change back by hand. Convert the file to Markdown to see changes quickly with pandoc --track-changes=all -t markdown index.docx.\nCommit the .qmd. The next build replaces the docx.\n\nThe docx is a snapshot. Edits made in Word are not read back automatically, so always edit the .qmd as the source of truth."
+    "objectID": "paper.html",
+    "href": "paper.html",
+    "title": "Paper title",
+    "section": "",
+    "text": "Replace this text with the paper. The .qmd is the source of truth; this file also builds a Word document for co-authors to edit with tracked changes:\n\nA co-author downloads paper.docx (from the Other Formats menu on the HTML page) and edits it in Word with Track Changes on.\nCopy each accepted change back into this file by hand. To see them quickly: pandoc --track-changes=all -t markdown paper.docx.\nCommit the .qmd. The next build replaces the docx.\n\nA citation looks like this (Peng 2011).\n\n\n\n\nReferences\n\nPeng, Roger D. 2011. “Reproducible Research in Computational Science.” Science (New York, N.y.) 334 (6060): 1226–27. https://doi.org/10.1126/science.1213847."
   }
 ]

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-07">
+<meta name="dcterms.date" content="2026-10-08">
 
 <title>Reproducible project template – Reproducible Project Template</title>
 <style>
@@ -62,26 +62,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -132,7 +113,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -175,9 +156,7 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -194,7 +173,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 7, 2026</p>
+      <p class="date">October 8, 2026</p>
     </div>
   </div>
   
@@ -217,10 +196,10 @@ div.csl-indent {
 <figcaption>Deploy status</figcaption>
 </figure>
 </div>
-<p>Last updated: October 7, 2026</p>
+<p>Last updated: October 8, 2026</p>
 <section id="quick-start" class="level2">
 <h2 class="anchored" data-anchor-id="quick-start">Quick start</h2>
-<p><em>(Note: The commands below use the <a href="https://cli.github.com/">GitHub CLI (<code>gh</code>)</a>. If you don’t have it installed, you can <a href="https://cli.github.com/">follow the installation instructions</a> or create the repository manually on GitHub).</em></p>
+<p>Use the <a href="https://cli.github.com/">GitHub CLI (<code>gh</code>)</a>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo create my-slides <span class="at">--template</span> robinlovelace/reproducible-project-template</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-slides</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable Pages: Settings → Pages → Source: Deploy from a branch → Branch: gh-pages, / (root)</span></span>
@@ -248,7 +227,7 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td><strong>Auto-deploy</strong></td>
-<td><code>actions/deploy-pages@v4</code> on every push to main</td>
+<td><code>peaceiris/actions-gh-pages@v4</code> on every push to main, publishes to <code>gh-pages</code></td>
 </tr>
 <tr class="odd">
 <td><strong>Auto-detect</strong></td>
@@ -277,10 +256,6 @@ div.csl-indent {
 <tr class="odd">
 <td><strong>Citation support</strong></td>
 <td><code>references.bib</code> ready for bibliographies</td>
-</tr>
-<tr class="even">
-<td><strong>Word version</strong></td>
-<td><code>index.qmd</code> also builds a <code>.docx</code> for tracked changes, linked from the site</td>
 </tr>
 </tbody>
 </table>
@@ -321,15 +296,13 @@ div.csl-indent {
 </section>
 <section id="structure" class="level2">
 <h2 class="anchored" data-anchor-id="structure">Structure</h2>
-<pre><code>├── slides.qmd                  # Main slide deck
-├── index.qmd                   # Landing page
+<pre><code>├── index.qmd                   # Landing page
+├── slides.qmd                  # Slide deck
+├── paper.qmd                   # Paper (HTML + Word + PDF)
 ├── _quarto.yml                 # Project config (output-dir, freeze, navbar)
 ├── references.bib              # Bibliography
 ├── _extensions/clean/          # clean-revealjs theme (bundled)
-└── .github/workflows/
-    ├── publish.yml             # Render + deploy to Pages
-    ├── release-standalone.yml  # Self-contained HTML + PDF release
-    └── pr-preview.yml          # PR preview deployments</code></pre>
+└── .github/workflows/          # publish, release-standalone, pr-preview</code></pre>
 </section>
 <section id="built-with-this-template" class="level2">
 <h2 class="anchored" data-anchor-id="built-with-this-template">Built with this template</h2>
@@ -337,29 +310,11 @@ div.csl-indent {
 <li><a href="https://robinlovelace.net/aum26/">AUM 2026 slides</a> — Modelling multi-model traffic, casualties and risk</li>
 <li><a href="https://robinlovelace.net/itfworkshop/">ITF Workshop slides</a> — Building communities of transport practitioners</li>
 </ul>
-</section>
-<section id="word-version-for-co-authors" class="level2">
-<h2 class="anchored" data-anchor-id="word-version-for-co-authors">Word version for co-authors</h2>
-<p>The home page (<code>index.qmd</code>) is also built as <code>index.docx</code>. It is linked under “Other Formats” on the published page and is deployed with the site. Citations from <code>references.bib</code> are rendered as text, for example <span class="citation" data-cites="peng2011">(<a href="#ref-peng2011" role="doc-biblioref">Peng 2011</a>)</span>.</p>
-<p>To turn it off, delete the <code>docx: default</code> line in the <code>format:</code> block of <code>index.qmd</code>. To add it to another page, copy the same <code>format:</code> block into that page.</p>
-<p>Editing with tracked changes:</p>
-<ol type="1">
-<li>Download the docx from the site, or from the <code>docx</code> artifact of the latest Publish run.</li>
-<li>Co-authors turn on Review, Track Changes in Word and edit as normal.</li>
-<li>The author opens the <code>.qmd</code> next to the returned docx and copies each accepted change back by hand. Convert the file to Markdown to see changes quickly with <code>pandoc --track-changes=all -t markdown index.docx</code>.</li>
-<li>Commit the <code>.qmd</code>. The next build replaces the docx.</li>
-</ol>
-<p>The docx is a snapshot. Edits made in Word are not read back automatically, so always edit the <code>.qmd</code> as the source of truth.</p>
-
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-peng2011" class="csl-entry" role="listitem">
-Peng, Roger D. 2011. <span>“Reproducible Research in Computational Science.”</span> <em>Science (New York, N.y.)</em> 334 (6060): 1226–27. <a href="https://doi.org/10.1126/science.1213847">https://doi.org/10.1126/science.1213847</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
