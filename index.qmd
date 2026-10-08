@@ -2,10 +2,8 @@
 title: "Reproducible project template"
 date: last-modified
 bibliography: references.bib
-# Word version for co-authors, linked under "Other Formats". To turn it off, delete the docx line.
 format:
   html: default
-  docx: default
 ---
 
 A flexible template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages.
