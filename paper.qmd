@@ -1,0 +1,12 @@
+---
+title: "Paper title"
+date: last-modified
+bibliography: references.bib
+# Word version for co-authors, linked under "Other Formats". To turn it off, delete the docx line.
+format:
+  docx: default
+---
+
+Replace this text with the paper. This file renders to Word (`.docx`) only, so co-authors can edit with tracked changes.
+
+A citation looks like this [@peng2011].

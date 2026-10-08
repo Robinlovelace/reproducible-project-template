@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render:
     - index.qmd
+    - paper.qmd
     - slides.qmd
 
 execute:

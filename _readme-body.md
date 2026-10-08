@@ -25,7 +25,7 @@ Your slides are live in ~30 seconds.
 | **PDF export** | Auto-generated via DeckTape on every release |
 | **Date-based releases** | Automatic versioned releases on every push |
 | **Citation support** | `references.bib` ready for bibliographies |
-| **Word version** | `index.qmd` also builds a `.docx` for tracked changes, linked from the site |
+| **Word version** | `paper.qmd` builds a `.docx` for co-authors to edit with tracked changes |
 
 ## Workflows
 
@@ -39,6 +39,7 @@ Your slides are live in ~30 seconds.
 
 ```
 ├── slides.qmd                  # Main slide deck
+├── paper.qmd                   # Paper, built as .docx
 ├── index.qmd                   # Landing page
 ├── _quarto.yml                 # Project config (output-dir, freeze, navbar)
 ├── references.bib              # Bibliography
@@ -56,15 +57,15 @@ Your slides are live in ~30 seconds.
 
 ## Word version for co-authors
 
-The home page (`index.qmd`) is also built as `index.docx`. It is linked under "Other Formats" on the published page and is deployed with the site. Citations from `references.bib` are rendered as text, for example [@peng2011].
+`paper.qmd` builds a Word document (`docs/paper.docx`), rendered to the site as an "Other Formats" download. Citations from `references.bib` are rendered as text, for example [@peng2011].
 
-To turn it off, delete the `docx: default` line in the `format:` block of `index.qmd`. To add it to another page, copy the same `format:` block into that page.
+To turn it off, delete the `docx: default` line in the `format:` block of `paper.qmd`. To add a docx to another page, copy the same `format:` block into that page.
 
 Editing with tracked changes:
 
 1. Download the docx from the site, or from the `docx` artifact of the latest Publish run.
 2. Co-authors turn on Review, Track Changes in Word and edit as normal.
-3. The author opens the `.qmd` next to the returned docx and copies each accepted change back by hand. Convert the file to Markdown to see changes quickly with `pandoc --track-changes=all -t markdown index.docx`.
+3. The author opens the `.qmd` next to the returned docx and copies each accepted change back by hand. Convert the file to Markdown to see changes quickly with `pandoc --track-changes=all -t markdown paper.docx`.
 4. Commit the `.qmd`. The next build replaces the docx.
 
 The docx is a snapshot. Edits made in Word are not read back automatically, so always edit the `.qmd` as the source of truth.

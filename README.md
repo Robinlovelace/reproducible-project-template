@@ -8,7 +8,7 @@ A template for reproducible slides with Quarto, GitHub Actions, and GitHub Pages
 
 ## Word version
 
-`index.qmd` is also built as a `.docx`, linked under "Other Formats" on the site, so co-authors can use tracked changes in Word. The author folds accepted changes back into the `.qmd` by hand (`pandoc --track-changes=all -t markdown index.docx` shows them). To turn it off, delete the `docx: default` line in the `format:` block of `index.qmd`.
+`paper.qmd` builds a `.docx` for co-authors. The author folds accepted changes back into the `.qmd` by hand (`pandoc --track-changes=all -t markdown paper.docx` shows them).
 
 ## Quick start
 
